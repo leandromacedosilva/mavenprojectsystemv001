@@ -14,6 +14,7 @@
             <p:panel header="panel inf" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel">
                 <p:inputText value="#{managerHardware.nome}" required="true" requiredMessage="campo obrigatorio" />
                 <p:commandButton value="Save" actionListener="#{managerHardware.message()}" update="@form" />
+                <p:outputLabel value="#{managerHardware.resultado}"/>
             </p:panel>
         </h:form>
     </h:body>
