@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class ManagerHardware implements Serializable {
     private String nome;
     public void message() {
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("AQUI E UM TESTE"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("AQUI E UM TESTE" + nome));
     }
 
     public ManagerHardware() {
