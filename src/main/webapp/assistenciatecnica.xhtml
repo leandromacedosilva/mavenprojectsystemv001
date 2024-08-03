@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <h:form>
+            <p:growl id="grow" />
+            <p:panel header="registrar saida hardware assist tecnica" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel">
+                <h3>Dados gerais</h3>
+                <hr/>
+                <h:panelGrid columns="3" >
+                    <p:inputText value="#{managerHardware.assistenciaTecnica.descricao}" placeholder="descricao" required="true" requiredMessage="campo obrigatorio" />
+                    <p:inputText value="#{managerHardware.assistenciaTecnica.observacao}" placeholder="observacao" required="true" requiredMessage="campo obrigatorio" />
+                <!--<p:commandButton value="Save" actionListener="" update="@form" />
+                <p:outputLabel value=""/>-->
+                </h:panelGrid>
+                <h1>Impressoras</h1>
+                <hr/>
+                <h:panelGrid columns="5">
+                    <p:inputText value="#{managerHardware.hardwareComProblema.descricao}" placeholder="descricao" />
+                    <p:inputText value="#{managerHardware.hardwareComProblema.modelo}" placeholder="modelo" />
+                    <p:inputText value="#{managerHardware.hardwareComProblema.numeroSerie}" placeholder="numero de serie"/>
+                    <p:inputText value="#{managerHardware.hardwareComProblema.retirado}" placeholder="retirada do"/>
+                    <p:commandButton value="Gravar" update="@form" actionListener="#{managerHardware.informationsPrinters()}" />
+                    <h1>RESULTADO: #{managerHardware.informationsPrinters()}</h1>
+                </h:panelGrid>
+                <hr/>
+                <p:dataTable>
+                    <f:facet name="header">
+                        impressoras
+                    </f:facet>
+                    <p:column headerText="codigo">
+                        
+                    </p:column>
+                    <p:column headerText="Descricao">
+                        
+                    </p:column>
+                    <p:column headerText="Modelo">
+                        
+                    </p:column>
+                    <p:column headerText="Numero de serie">
+                        
+                    </p:column>
+                    <p:column headerText="Retirada do">
+                        
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>

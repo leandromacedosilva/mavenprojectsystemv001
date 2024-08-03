@@ -14,18 +14,21 @@ import java.util.List;
 public class AssistenciaTecnica extends GenericEntity {
     @Id
     private Long id;
+    private String descricao;
     private List<HardwareComProblema> hardwaresComProblemas;
     private String observacao;
     
     public AssistenciaTecnica() {}
 
-    public AssistenciaTecnica(List<HardwareComProblema> hardwaresComProblemas, String observacao) {
+    public AssistenciaTecnica(String descricao, List<HardwareComProblema> hardwaresComProblemas, String observacao) {
+        this.descricao = descricao;
         this.hardwaresComProblemas = hardwaresComProblemas;
         this.observacao = observacao;
     }
 
-    public AssistenciaTecnica(Long id, List<HardwareComProblema> hardwaresComProblemas, String observacao) {
+    public AssistenciaTecnica(Long id, String descricao, List<HardwareComProblema> hardwaresComProblemas, String observacao) {
         this.id = id;
+        this.descricao = descricao;
         this.hardwaresComProblemas = hardwaresComProblemas;
         this.observacao = observacao;
     }
@@ -38,6 +41,14 @@ public class AssistenciaTecnica extends GenericEntity {
         this.id = id;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    
     public List<HardwareComProblema> getHardwaresComProblemas() {
         return hardwaresComProblemas;
     }
