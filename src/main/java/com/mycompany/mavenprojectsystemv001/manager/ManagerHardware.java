@@ -32,14 +32,18 @@ public class ManagerHardware implements Serializable {
         hardwaresComProblemas = new ArrayList<>();
     }
     
-    public void salvar() {
-        this.resultado = hardwareComProblema.getDescricao();
-    }
+    //public void salvar() {
+        //this.resultado = hardwareComProblema.getDescricao();
+    //}
     
     public void informationsPrinters() {
-        //System.out.println("" + assistenciaTecnica.getDescricao());
-        //System.out.println("" + assistenciaTecnica.getObservacao());
+        System.out.println("" + assistenciaTecnica.getDescricao());
+        System.out.println("" + assistenciaTecnica.getObservacao());
         resultado = assistenciaTecnica.getObservacao();
+    }
+    
+    public void addPrintersAssistTecnic() {
+        hardwaresComProblemas.add(hardwareComProblema);
     }
 
     public AssistenciaTecnica getAssistenciaTecnica() {

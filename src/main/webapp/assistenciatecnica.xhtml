@@ -2,8 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-       xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -23,32 +23,36 @@
                 <h1>Impressoras</h1>
                 <hr/>
                 <h:panelGrid columns="5">
+                    
                     <p:inputText value="#{managerHardware.hardwareComProblema.descricao}" placeholder="descricao" />
                     <p:inputText value="#{managerHardware.hardwareComProblema.modelo}" placeholder="modelo" />
                     <p:inputText value="#{managerHardware.hardwareComProblema.numeroSerie}" placeholder="numero de serie"/>
                     <p:inputText value="#{managerHardware.hardwareComProblema.retirado}" placeholder="retirada do"/>
-                    <p:commandButton value="Gravar" update="@form" actionListener="#{managerHardware.informationsPrinters()}" />
-                    <h1>RESULTADO: #{managerHardware.informationsPrinters()}</h1>
+                    <!--<p:commandButton value="Gravar" update="@form" actionListener="#{managerHardware.informationsPrinters()}" />-->
+                    <p:commandButton value="Gravar" update="@form" actionListener="#{managerHardware.addPrintersAssistTecnic()}" />
+                    
+                    <h1>RESULTADO: #{managerHardware.resultado}</h1>
+                    
                 </h:panelGrid>
                 <hr/>
-                <p:dataTable>
+                <p:dataTable value="#{managerHardware.hardwaresComProblemas}" var="herdwareBugs">
                     <f:facet name="header">
                         impressoras
                     </f:facet>
                     <p:column headerText="codigo">
-                        
+                        <p:outputLabel value="" />
                     </p:column>
                     <p:column headerText="Descricao">
-                        
+                        <p:outputLabel value="#{herdwareBugs.descricao}" />
                     </p:column>
                     <p:column headerText="Modelo">
-                        
+                        <p:outputLabel value="#{herdwareBugs.modelo}" />
                     </p:column>
                     <p:column headerText="Numero de serie">
-                        
+                        <p:outputLabel value="#{herdwareBugs.numeroSerie}" />
                     </p:column>
                     <p:column headerText="Retirada do">
-                        
+                        <p:outputLabel value="#{herdwareBugs.retirado}" />
                     </p:column>
                 </p:dataTable>
             </p:panel>
