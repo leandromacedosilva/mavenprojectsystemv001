@@ -22,25 +22,23 @@
                 </h:panelGrid>
                 <h1>Impressoras</h1>
                 <hr/>
-                <h:panelGrid columns="5">
-                    
-                    <p:inputText value="#{managerHardware.hardwareComProblema.descricao}" placeholder="descricao" />
-                    <p:inputText value="#{managerHardware.hardwareComProblema.modelo}" placeholder="modelo" />
-                    <p:inputText value="#{managerHardware.hardwareComProblema.numeroSerie}" placeholder="numero de serie"/>
-                    <p:inputText value="#{managerHardware.hardwareComProblema.retirado}" placeholder="retirada do"/>
-                    <!--<p:commandButton value="Gravar" update="@form" actionListener="#{managerHardware.informationsPrinters()}" />-->
-                    <p:commandButton value="Gravar" update="@form" actionListener="#{managerHardware.addPrintersAssistTecnic()}" />
-                    
-                    <h1>RESULTADO: #{managerHardware.resultado}</h1>
+                <h:panelGrid columns="7">
+                    <p:inputText value="#{managerHardware.hardwareComProblema.id}" placeholder="codigo" required="true" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware.hardwareComProblema.descricao}" placeholder="descricao" required="true" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware.hardwareComProblema.modelo}" placeholder="modelo" required="true" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware.hardwareComProblema.numeroSerie}" placeholder="numero de serie" required="true" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware.hardwareComProblema.retirado}" placeholder="retirada do" required="true" requiredMessage="obrigatorio" />
+                    <!--<p:commandButton value="Gravar" update="@form" actionListener="" />-->
+                    <p:commandButton value="Gravar" icon="pi pi-save" update="@form" actionListener="#{managerHardware.addPrintersAssistTecnic()}" />
                     
                 </h:panelGrid>
                 <hr/>
-                <p:dataTable value="#{managerHardware.hardwaresComProblemas}" var="herdwareBugs">
+                <p:dataTable value="#{managerHardware.hardwaresComProblemas}" id="dt" var="herdwareBugs" paginator="true" rows="2">
                     <f:facet name="header">
                         impressoras
                     </f:facet>
                     <p:column headerText="codigo">
-                        <p:outputLabel value="" />
+                        <p:outputLabel value="#{herdwareBugs.id}" />
                     </p:column>
                     <p:column headerText="Descricao">
                         <p:outputLabel value="#{herdwareBugs.descricao}" />
@@ -54,7 +52,12 @@
                     <p:column headerText="Retirada do">
                         <p:outputLabel value="#{herdwareBugs.retirado}" />
                     </p:column>
+                    <p:column headerText="Action">
+                        <p:commandButton value="edit" />
+                        <p:commandButton value="delete" actionListener="#{managerHardware.removeRegister(herdwareBugs)}" update="dt" process="@this"/>
+                    </p:column>
                 </p:dataTable>
+                <p:commandButton value="Save" />
             </p:panel>
         </h:form>
     </h:body>

@@ -44,6 +44,11 @@ public class ManagerHardware implements Serializable {
     
     public void addPrintersAssistTecnic() {
         hardwaresComProblemas.add(hardwareComProblema);
+        hardwareComProblema = new HardwareComProblema();
+    }
+    
+    public void removeRegister(HardwareComProblema hCP) {
+        hardwaresComProblemas.remove(hCP);
     }
 
     public AssistenciaTecnica getAssistenciaTecnica() {
