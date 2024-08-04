@@ -57,7 +57,7 @@
                         <p:commandButton value="delete" actionListener="#{managerHardware.removeRegister(herdwareBugs)}" update="dt" process="@this"/>
                     </p:column>
                 </p:dataTable>
-                <p:commandButton value="Save" />
+                <p:commandButton value="Save" actionListener="#{managerHardware.visualizar()}" update="@form" process="@this" />
             </p:panel>
         </h:form>
     </h:body>

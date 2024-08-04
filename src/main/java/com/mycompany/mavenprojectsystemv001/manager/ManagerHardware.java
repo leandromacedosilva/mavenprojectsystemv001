@@ -50,6 +50,12 @@ public class ManagerHardware implements Serializable {
     public void removeRegister(HardwareComProblema hCP) {
         hardwaresComProblemas.remove(hCP);
     }
+    
+    public void visualizar() {
+        System.out.println("DESCRICAO: " + assistenciaTecnica.getDescricao());
+        assistenciaTecnica.setHardwaresComProblemas(hardwaresComProblemas);
+        System.out.println("LISTA: " + assistenciaTecnica.getHardwaresComProblemas());
+    }
 
     public AssistenciaTecnica getAssistenciaTecnica() {
         return assistenciaTecnica;
