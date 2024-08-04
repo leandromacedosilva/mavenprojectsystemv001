@@ -6,12 +6,16 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
+        <link href="./Src/Css/index.css" rel="stylesheet"/>
     </h:head>
     <h:body>
-        Hello from Facelets
+        
         <h:form>
             <p:growl id="grow" />
             <p:panel header="registrar saida hardware assist tecnica" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel">
+                <div class="btnSearch">
+                    <p:commandButton value="Search" icon="pi pi-search" />
+                </div>
                 <h3>Dados gerais</h3>
                 <hr/>
                 <h:panelGrid columns="3" >
@@ -23,13 +27,13 @@
                 <h1>Impressoras</h1>
                 <hr/>
                 <h:panelGrid columns="7">
-                    <p:inputText value="#{managerHardware.hardwareComProblema.id}" placeholder="codigo" required="true" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware.hardwareComProblema.id}" placeholder="codigo" required="false" requiredMessage="obrigatorio" />
                     <p:inputText value="#{managerHardware.hardwareComProblema.descricao}" placeholder="descricao" required="true" requiredMessage="obrigatorio" />
                     <p:inputText value="#{managerHardware.hardwareComProblema.modelo}" placeholder="modelo" required="true" requiredMessage="obrigatorio" />
                     <p:inputText value="#{managerHardware.hardwareComProblema.numeroSerie}" placeholder="numero de serie" required="true" requiredMessage="obrigatorio" />
                     <p:inputText value="#{managerHardware.hardwareComProblema.retirado}" placeholder="retirada do" required="true" requiredMessage="obrigatorio" />
                     <!--<p:commandButton value="Gravar" update="@form" actionListener="" />-->
-                    <p:commandButton value="Gravar" icon="pi pi-save" update="@form" actionListener="#{managerHardware.addPrintersAssistTecnic()}" />
+                    <p:commandButton value="Add" icon="pi pi-plus" update="@form" actionListener="#{managerHardware.addPrintersAssistTecnic()}" />
                     
                 </h:panelGrid>
                 <hr/>
@@ -52,12 +56,12 @@
                     <p:column headerText="Retirada do">
                         <p:outputLabel value="#{herdwareBugs.retirado}" />
                     </p:column>
-                    <p:column headerText="Action">
+                    <p:column headerText="Action" class="actionsBtn">
                         <p:commandButton value="edit" />
                         <p:commandButton value="delete" actionListener="#{managerHardware.removeRegister(herdwareBugs)}" update="dt" process="@this"/>
                     </p:column>
                 </p:dataTable>
-                <p:commandButton value="Save" actionListener="#{managerHardware.visualizar()}" update="@form" process="@this" />
+                <p:commandButton value="Gravar" icon="pi pi-save" actionListener="#{managerHardware.visualizar()}" update="@form" process="@this" />
             </p:panel>
         </h:form>
     </h:body>

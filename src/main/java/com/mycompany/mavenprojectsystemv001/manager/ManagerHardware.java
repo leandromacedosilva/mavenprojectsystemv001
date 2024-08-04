@@ -2,12 +2,14 @@ package com.mycompany.mavenprojectsystemv001.manager;
 
 import com.mycompany.mavenprojectsystemv001.model.AssistenciaTecnica;
 import com.mycompany.mavenprojectsystemv001.model.HardwareComProblema;
+import com.mycompany.mavenprojectsystemv001.util.Message;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -43,8 +45,14 @@ public class ManagerHardware implements Serializable {
     }
     
     public void addPrintersAssistTecnic() {
-        hardwaresComProblemas.add(hardwareComProblema);
-        hardwareComProblema = new HardwareComProblema();
+        if(hardwareComProblema.getId() != null && hardwareComProblema.getId().equals(hardwareComProblema.getId() + 1)){
+            hardwaresComProblemas.add(hardwareComProblema);
+            hardwareComProblema = new HardwareComProblema();
+        } else {
+            //Message.message("JA EXISTE UM CADASTRO COM ESTE CODIGO.");
+            Message.message("O CODIGO DO REGISTRO NAO PODE SER NULO.");
+        }
+        
     }
     
     public void removeRegister(HardwareComProblema hCP) {
@@ -73,8 +81,6 @@ public class ManagerHardware implements Serializable {
         this.hardwaresComProblemas = hardwaresComProblemas;
     }
     
-    
-
     public HardwareComProblema getHardwareComProblema() {
         return hardwareComProblema;
     }
@@ -90,6 +96,5 @@ public class ManagerHardware implements Serializable {
     public void setResultado(String resultado) {
         this.resultado = resultado;
     }
-    
     
 }

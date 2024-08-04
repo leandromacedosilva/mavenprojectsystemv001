@@ -64,6 +64,12 @@ public class AssistenciaTecnica extends GenericEntity {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
+
+    @Override
+    public String toString() {
+        return "AssistenciaTecnica{" + "id=" + id + ", descricao=" + descricao + ", hardwaresComProblemas=" + hardwaresComProblemas + ", observacao=" + observacao + '}';
+    }
+    
     
     
 }

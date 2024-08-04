@@ -80,6 +80,11 @@ public class HardwareComProblema extends GenericEntity {
     public void setRetirado(String retirado) {
         this.retirado = retirado;
     }
+
+    @Override
+    public String toString() {
+        return "HardwareComProblema{" + "id=" + id + ", descricao=" + descricao + ", modelo=" + modelo + ", numeroSerie=" + numeroSerie + ", retirado=" + retirado + '}';
+    }
     
     
 }
