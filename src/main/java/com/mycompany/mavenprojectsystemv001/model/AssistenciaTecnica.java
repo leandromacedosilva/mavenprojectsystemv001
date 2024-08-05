@@ -2,8 +2,14 @@
 package com.mycompany.mavenprojectsystemv001.model;
 
 import com.mycompany.mavenprojectsystemv001.generic.GenericEntity;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
 import java.util.List;
 
 /**
@@ -11,10 +17,14 @@ import java.util.List;
  * @author itccolina
  */
 @Entity
+@Table(name = "tbassistenciatecnica")
+@SequenceGenerator(name = "seq_tbassistenciatecnica", sequenceName = "seq_tbassistenciatecnica", initialValue = 1, allocationSize = 50)
 public class AssistenciaTecnica extends GenericEntity {
     @Id
+    @GeneratedValue(generator = "seq_tbassistenciatecnica", strategy = GenerationType.SEQUENCE)
     private Long id;
     private String descricao;
+    @OneToMany(cascade = CascadeType.ALL)
     private List<HardwareComProblema> hardwaresComProblemas;
     private String observacao;
     

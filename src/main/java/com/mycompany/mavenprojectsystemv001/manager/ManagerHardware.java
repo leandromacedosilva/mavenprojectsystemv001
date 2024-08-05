@@ -2,8 +2,10 @@ package com.mycompany.mavenprojectsystemv001.manager;
 
 import com.mycompany.mavenprojectsystemv001.model.AssistenciaTecnica;
 import com.mycompany.mavenprojectsystemv001.model.HardwareComProblema;
+import com.mycompany.mavenprojectsystemv001.service.HardwareComProblemaService;
 import com.mycompany.mavenprojectsystemv001.util.Message;
 import jakarta.annotation.PostConstruct;
+import jakarta.ejb.EJB;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import java.io.Serializable;
@@ -17,6 +19,10 @@ import java.util.List;
 @Named
 @ViewScoped
 public class ManagerHardware implements Serializable {
+    
+    @EJB
+    HardwareComProblemaService hardwareComProblemaService;
+    
     private AssistenciaTecnica assistenciaTecnica;
     private HardwareComProblema hardwareComProblema;
     private List<HardwareComProblema> hardwaresComProblemas;
@@ -36,6 +42,13 @@ public class ManagerHardware implements Serializable {
     //public void salvar() {
         //this.resultado = hardwareComProblema.getDescricao();
     //}
+    // ******
+    public void save() {
+        hardwareComProblemaService.save(hardwareComProblema);
+        instance();
+        //hardwareComProblema = new HardwareComProblema();
+        Message.message("Dados persistidos com sucesso no banco de dados!");
+    }
     
     public void informationsPrinters() {
         System.out.println("" + assistenciaTecnica.getDescricao());

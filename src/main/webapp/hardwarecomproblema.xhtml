@@ -5,10 +5,10 @@
        xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>hardware com problema page</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        
         <h:form>
             <p:growl id="grow" />
             <p:panel header="registrar hardware com problema" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel">
@@ -17,7 +17,7 @@
                 <p:inputText value="#{managerHardware.hardwareComProblema.modelo}" placeholder="modelo" required="true" requiredMessage="campo obrigatorio" />
                 <p:inputText value="#{managerHardware.hardwareComProblema.numeroSerie}" placeholder="numero de serie" required="true" requiredMessage="campo obrigatorio" />
                 <p:inputText value="#{managerHardware.hardwareComProblema.retirado}" placeholder="retirado do" required="true" requiredMessage="campo obrigatorio" />
-                <p:commandButton value="Save" actionListener="#{managerHardware.salvar()}" update="@form" />
+                <p:commandButton value="Save" actionListener="#{managerHardware.save()}" update="@form" />
                 <p:outputLabel value="#{managerHardware.resultado}"/>
                 </h:panelGrid>
             </p:panel>

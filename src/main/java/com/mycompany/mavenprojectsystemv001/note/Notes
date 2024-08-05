@@ -1,4 +1,18 @@
 
+-- escritas SLQ in db PostGresSQL
+--- database storagedatadb
+select * from information_schema.tables where table_schema = 'public';
+
+select * from tbassistenciatecnica;
+select * from tbassistenciatecnica_tbhardwarecomdefeito;
+select * from tbhardwarecomdefeito;
+
+--drop table assistenciatecnica;
+--drop table assistenciatecnica_tbhardwarecomdefeito;
+
+-- drop table tbjogador;
+--- drop table tbtime_tbjogador;
+---- drop table tbtime;
 
 Integrando JPA com aplicação WEB
 00:11:22
