@@ -8,7 +8,6 @@ import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -16,21 +15,22 @@ import java.util.List;
  */
 @Named
 @ViewScoped
-public class ManagerHardware implements Serializable {
+public class ManagerHardware2 implements Serializable {
     private AssistenciaTecnica assistenciaTecnica;
     private HardwareComProblema hardwareComProblema;
-    private List<HardwareComProblema> hardwaresComProblemas;
+    
     private String resultado;
 
-    public ManagerHardware() {
+    public ManagerHardware2() {
     }
     
     // apos o construtor, faca
     @PostConstruct
     public void instance(){
         assistenciaTecnica = new AssistenciaTecnica();
+        assistenciaTecnica.setHardwaresComProblemas(new ArrayList<>());
         hardwareComProblema = new HardwareComProblema();
-        hardwaresComProblemas = new ArrayList<>();
+        
     }
     
     //public void salvar() {
@@ -55,18 +55,17 @@ public class ManagerHardware implements Serializable {
 //    }
     
     public void addPrintersAssistTecnic() {
-            hardwaresComProblemas.add(hardwareComProblema);
+            this.assistenciaTecnica.getHardwaresComProblemas().add(hardwareComProblema);
             hardwareComProblema = new HardwareComProblema();
     }
     
     public void removeRegister(HardwareComProblema hCP) {
-        hardwaresComProblemas.remove(hCP);
+        this.assistenciaTecnica.getHardwaresComProblemas().remove(hCP);
         Message.message("O REGISTRO FOI DELETADO COM SUCESSO!");
     }
     
     public void visualizar() {
         System.out.println("DESCRICAO: " + assistenciaTecnica.getDescricao());
-        assistenciaTecnica.setHardwaresComProblemas(hardwaresComProblemas);
         System.out.println("LISTA: " + assistenciaTecnica.getHardwaresComProblemas());
     }
 
@@ -76,14 +75,6 @@ public class ManagerHardware implements Serializable {
 
     public void setAssistenciaTecnica(AssistenciaTecnica assistenciaTecnica) {
         this.assistenciaTecnica = assistenciaTecnica;
-    }
-
-    public List<HardwareComProblema> getHardwaresComProblemas() {
-        return hardwaresComProblemas;
-    }
-
-    public void setHardwaresComProblemas(List<HardwareComProblema> hardwaresComProblemas) {
-        this.hardwaresComProblemas = hardwaresComProblemas;
     }
     
     public HardwareComProblema getHardwareComProblema() {

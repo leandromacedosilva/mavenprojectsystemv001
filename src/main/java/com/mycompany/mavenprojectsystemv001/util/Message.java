@@ -12,4 +12,5 @@ public class Message {
     public static void message(String text) {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(text));
     }
+    
 }

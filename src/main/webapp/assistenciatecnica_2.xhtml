@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="./Src/Css/index.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <p:growl id="grow" />
+            <p:panel header="registrar saida hardware assist tecnica" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel">
+                <div class="btnSearch">
+                    <p:commandButton value="Search" icon="pi pi-search" />
+                </div>
+                <h3>Dados gerais</h3>
+                <hr/>
+                <h:panelGrid columns="3" >
+                    <p:inputText value="#{managerHardware2.assistenciaTecnica.descricao}" placeholder="descricao" required="true" requiredMessage="campo obrigatorio" />
+                    <p:inputText value="#{managerHardware2.assistenciaTecnica.observacao}" placeholder="observacao" required="true" requiredMessage="campo obrigatorio" />
+                <!--<p:commandButton value="Save" actionListener="" update="@form" />
+                <p:outputLabel value=""/>-->
+                </h:panelGrid>
+                <h1>Impressoras</h1>
+                <hr/>
+                <h:panelGrid columns="7">
+                    <p:inputText value="#{managerHardware2.hardwareComProblema.id}" placeholder="codigo" required="false" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware2.hardwareComProblema.descricao}" placeholder="descricao" required="true" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware2.hardwareComProblema.modelo}" placeholder="modelo" required="true" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware2.hardwareComProblema.numeroSerie}" placeholder="numero de serie" required="true" requiredMessage="obrigatorio" />
+                    <p:inputText value="#{managerHardware2.hardwareComProblema.retirado}" placeholder="retirada do" required="true" requiredMessage="obrigatorio" />
+                    <!--<p:commandButton value="Gravar" update="@form" actionListener="" />-->
+                    <p:commandButton value="Add" icon="pi pi-plus" update="@form" actionListener="#{managerHardware2.addPrintersAssistTecnic()}" />
+                    
+                </h:panelGrid>
+                <hr/>
+                <p:dataTable value="#{managerHardware2.assistenciaTecnica.hardwaresComProblemas}" id="dt" var="herdwareBugs2" paginator="true" rows="2">
+                    <f:facet name="header">
+                        impressoras
+                    </f:facet>
+                    <p:column headerText="codigo">
+                        <p:outputLabel value="#{herdwareBugs2.id}" />
+                    </p:column>
+                    <p:column headerText="Descricao">
+                        <p:outputLabel value="#{herdwareBugs2.descricao}" />
+                    </p:column>
+                    <p:column headerText="Modelo">
+                        <p:outputLabel value="#{herdwareBugs2.modelo}" />
+                    </p:column>
+                    <p:column headerText="Numero de serie">
+                        <p:outputLabel value="#{herdwareBugs2.numeroSerie}" />
+                    </p:column>
+                    <p:column headerText="Retirada do">
+                        <p:outputLabel value="#{herdwareBugs2.retirado}" />
+                    </p:column>
+                    <p:column headerText="Action" class="actionsBtn">
+                        <p:commandButton value="edit" />
+                        <p:commandButton value="delete" actionListener="#{managerHardware2.removeRegister(herdwareBugs2)}" update="dt" process="@this"/>
+                    </p:column>
+                </p:dataTable>
+                <p:commandButton value="Gravar" icon="pi pi-save" actionListener="#{managerHardware2.visualizar()}" update="@form" process="@this" />
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
