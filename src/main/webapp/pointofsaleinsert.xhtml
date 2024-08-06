@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>system prototype - cadastrar pos</title>
+    </h:head>
+    <h:body>
+        <h1>WELCOME TO SYSTEM PROTOTYPE</h1>
+        <h:form>
+            <p:growl id="growl" />
+            <p:panel header="panel pos insert" toggleable="true" toggleSpeed="500" closable="true" closeSpeed="500" widgetVar="panel">
+                <h:panelGrid columns="7">
+                    <p:inputText value="#{pointOfSaleManager.pointOfSale.operator}" placeholder="operador" />
+                    <p:inputText value="#{pointOfSaleManager.pointOfSale.fisicalBox}" placeholder="caixa fisico" style="width: 50px" />
+                    <p:inputText value="#{pointOfSaleManager.pointOfSale.logicalBox}" placeholder="caixa logico" style="width: 50px" />
+                    <p:inputText value="#{pointOfSaleManager.pointOfSale.posValue}" placeholder="valor do cartao" style="width: 80px" />
+                    <p:inputText value="#{pointOfSaleManager.pointOfSale.cardType}" placeholder="tipo cartao" />
+                    <p:inputText value="#{pointOfSaleManager.pointOfSale.note}" placeholder="observacoes" style="width: 500px" />
+                    <p:commandButton value="Add" actionListener="#{pointOfSaleManager.save()}" update="@form" />
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>system prototype - pesquisar hardware loja</title>
+    </h:head>
+    <h:body>
+        <h1>WELCOME TO SYSTEM PROTOTYPE</h1>
+        <h:form>
+            <p:growl id="growl" />
+            <p:panel header="panel point of sale search" toggleable="true" toggleSpeed="500" closable="true" closeSpeed="500" widgetVar="panel">
+                <h:panelGrid columns="9">
+                    <p:inputText value="#{hardwareInputInStoreManager.hardwareInputInStore.id}" placeholder="codigo" style="width: 15px" />
+                    <p:inputText value="#{hardwareInputInStoreManager.hardwareInputInStore.description}" placeholder="descricao" style="width: 200px" />
+                    <p:inputText value="#{hardwareInputInStoreManager.hardwareInputInStore.acquirer}" placeholder="adquirente" style="width: 100px" />
+                    <p:inputText value="#{hardwareInputInStoreManager.hardwareInputInStore.apNumber}" placeholder="numero ap" style="width: 50px" />
+                    <p:inputText value="#{hardwareInputInStoreManager.hardwareInputInStore.serialNUmber}" placeholder="numero serie" style="width: 200px" />
+                    <p:inputText value="#{hardwareInputInStoreManager.hardwareInputInStore.anatel}" placeholder="anatel" style="width: 200px" />
+                    <p:inputText value="#{hardwareInputInStoreManager.hardwareInputInStore.numberFisicalBox}" placeholder="posical fisica cx" style="width: 120px" />
+                    <p:inputText value="#{hardwareInputInStoreManager.hardwareInputInStore.numberLogicalBox}" placeholder="posicao logica cx" style="width: 120px" />
+                    <p:commandButton value="Search" actionListener="#{hardwareInputInStoreManager.search()}" icon="pi pi-search" update="@form" />
+                </h:panelGrid>
+        
+                    <p:dataTable id="dt" value="#{hardwareInputInStoreManager.hardwareInputInStores}" var="hardwareInputInStore" paginator="true" rows="5">
+                    
+                    <p:column headerText="codigo" style="width: 15px" >
+                        <p:outputLabel value="#{hardwareInputInStore.id}" />
+                        </p:column>
+                        <p:column headerText="descricao" style="width: 150px" >
+                            <p:outputLabel value="#{hardwareInputInStore.description}" />
+                        </p:column>
+                        <p:column headerText="adquirente" style="width: 70px">
+                            <p:outputLabel value="#{hardwareInputInStore.acquirer}" />
+                        </p:column>
+                        <p:column headerText="num ap" style="width: 80px">
+                            <p:outputLabel value="#{hardwareInputInStore.apNumber}" />
+                        </p:column>
+                        <p:column headerText="numero serie" style="width: 150px">
+                            <p:outputLabel value="#{hardwareInputInStore.serialNUmber}" />
+                        </p:column>
+                        <p:column headerText="anatel" style="width: 150px">
+                            <p:outputLabel value="#{hardwareInputInStore.anatel}" />
+                        </p:column>
+                        <p:column headerText="posicao fisica cx" style="width: 120px">
+                            <p:outputLabel value="#{hardwareInputInStore.numberFisicalBox}" />
+                        </p:column>
+                        <p:column headerText="posicao logica cx" style="width: 120px">
+                            <p:outputLabel value="#{hardwareInputInStore.numberLogicalBox}" />
+                        </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

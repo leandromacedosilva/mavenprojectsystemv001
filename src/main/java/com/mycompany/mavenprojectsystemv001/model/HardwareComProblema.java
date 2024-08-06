@@ -1,6 +1,6 @@
 package com.mycompany.mavenprojectsystemv001.model;
 
-import com.mycompany.mavenprojectsystemv001.generic.GenericEntity;
+import com.mycompany.projectprototypesystemv01.generic.GenericEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

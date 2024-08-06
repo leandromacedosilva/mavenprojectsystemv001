@@ -40,3 +40,42 @@ Conceitos, Projeto Maven, JSF(Mentoria)
  01:16:39
 
 estudar sobre "bins validations", usados por exemplo em CPFs e CNPJs
+
+http://programe.io:8080/programeio-1.0-SNAPSHOT/aulas.xhtml?modulo=6
+
+Serviço Genérico - Estruturando o Projeto
+
+01:03:30
+00:43:23
+00:39:09
+
+Andy Leech & Justin Jet Zorbas - Reaching The Summit
+
+--- notas do systema -----------------------------------------------------------------------
+systema para controle de entrada de mercadoria no BAR da empresa
+systema para controle/registro de cartoes POS(comprovantes de pagamento)
+
+DATABASE NAME = storagedatadb
+
+-- Database: postgres
+
+-- DROP DATABASE IF EXISTS postgres;
+
+CREATE DATABASE storagedatadb
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    LOCALE_PROVIDER = 'libc'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+COMMENT ON DATABASE storagedatadb
+    IS 'default administrative connection database';
+
+QUERYES
+select * from information_schema.tables where table_schema = 'public';
+select * from tbpointofsale;
+select * from tbhardwareinputinstore;

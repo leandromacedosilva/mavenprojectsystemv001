@@ -1,4 +1,5 @@
-package com.mycompany.mavenprojectsystemv001.generic;
+
+package com.mycompany.projectprototypesystemv01.generic;
 
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Temporal;
@@ -20,7 +21,7 @@ public abstract class GenericEntity implements Serializable {
 
     public GenericEntity() {
         active = Boolean.TRUE;
-        dateRegister = new Date();
+        setDateRegister(new Date());
     }
 
     public Boolean getActive() {
