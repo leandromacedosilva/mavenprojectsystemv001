@@ -6,13 +6,16 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>system prototype - cadastrar pos</title>
+        <link href="./Src/Css/index.css" rel="stylesheet" />
     </h:head>
     <h:body>
         <h1>WELCOME TO SYSTEM PROTOTYPE</h1>
         <h:form>
             <p:growl id="growl" />
             <p:panel header="panel pos insert" toggleable="true" toggleSpeed="500" closable="true" closeSpeed="500" widgetVar="panel">
+                <div class="linkPs">
                 <a href="pointofsalessearch.xhtml" target="_blank">consultar pos</a>
+                </div>
                 <h:panelGrid columns="1">
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.operator}" placeholder="operador" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.fisicalBox}" placeholder="caixa fisico" style="width: 100px" />

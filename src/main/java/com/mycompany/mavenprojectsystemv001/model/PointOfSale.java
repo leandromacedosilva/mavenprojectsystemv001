@@ -28,7 +28,7 @@ public class PointOfSale extends GenericEntity {
     private int fisicalBox;
     private int logicalBox;
     private float posValue;
-    private String vlText;
+    //private String vlText;
     @Column(length = 50)
     private String cardType;
     //  classe generica dataregistro;
@@ -48,10 +48,10 @@ public class PointOfSale extends GenericEntity {
     }
     
     // converter virgula para ponto 
-    public void convertCaracter() {
-        vlText = String.valueOf(this.posValue);
-        Caracter.caracterRemove(vlText);
-    }
+    //public void convertCaracter() {
+        //vlText = String.valueOf(this.posValue);
+       // Caracter.caracterRemove(vlText);
+   // }
 
     public Long getId() {
         return id;
@@ -93,13 +93,13 @@ public class PointOfSale extends GenericEntity {
         this.posValue = posValue;
     }
 
-    public String getVlText() {
-        return vlText;
-    }
+    //public String getVlText() {
+        //return vlText;
+    //}
 
-    public void setVlText(String vlText) {
-        this.vlText = vlText;
-    }
+    //public void setVlText(String vlText) {
+        //this.vlText = vlText;
+    //}
     
     
 

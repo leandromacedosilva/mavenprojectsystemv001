@@ -3,16 +3,29 @@
 --- database storagedatadb
 select * from information_schema.tables where table_schema = 'public';
 
+select *
+from tbproduct;
+
+select *
+from tbpointofsale;
+
+INSERT INTO tbpointofsale(id,active,dateregister,dateupdate,cardtype,fisicalbox,logicalbox,note,operator,posvalue)
+                   VALUES(2,'true','2020-02-12','2024-08-01','ALELO DEBITO',01,008,'REGISTRAPELO ANTONIO','SARA',12.85)
+                        ,(3,'true','2021-05-15','2024-08-01','DINNERS',06,014,'REGISTRADO PELA LUZIA','LUIZ',27.94)
+                        ,(4,'true','2020-06-24','2024-08-01','TICKET',12,232,'REGISTRADO PELO MIGUEL','PEDRO',154.58)
+                        ,(5,'true','2022-05-17','2024-08-01','VISA CREDITO',007,225,'REGISTRADO PELA ALDEANE','MARIANA',984.21)
+                        ,(6,'true','2023-09-09','2024-08-03','ASPEB',18,007,'REGISTRADO PELA MARIA','HIEDA',87.29);
+
 select * from tbassistenciatecnica;
 select * from tbassistenciatecnica_tbhardwarecomdefeito;
 select * from tbhardwarecomdefeito;
 
 INSERT INTO tbhardwarecomdefeito(id,active,dateregister,dateupdate,descricao,modelo,numeroserie,retirado)
-VALUES(4,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','10010000800000112487','CAIXA 007')
-     ,(5,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','10010000800000624758','CAIXA 012')
-     ,(6,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','10010000800000914587','CAIXA 021')
-     ,(7,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','10010000800000554174','CAIXA 017')
-     ,(8,'true','2024-08-03','2024-08-03','IMPRESSORA 4200','MP 4200 TH','10010000800000374587','CAIXA 013');
+                          VALUES(4,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','10010000800000112487','CAIXA 007')
+                               ,(5,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','10010000800000624758','CAIXA 012')
+                               ,(6,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','10010000800000914587','CAIXA 021')
+                               ,(7,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','10010000800000554174','CAIXA 017')
+                               ,(8,'true','2024-08-03','2024-08-03','IMPRESSORA 4200','MP 4200 TH','10010000800000374587','CAIXA 013');
 
 --drop table assistenciatecnica;
 --drop table assistenciatecnica_tbhardwarecomdefeito;
@@ -20,6 +33,10 @@ VALUES(4,'true','2024-08-01','2024-08-01','IMPRESSORA 4200','MP 4200 TH','100100
 -- drop table tbjogador;
 --- drop table tbtime_tbjogador;
 ---- drop table tbtime;
+
+--- aulas Jakarta EE with Mr Ely Bezerra
+04 - Serviços genéricos estruturando o projeto
+00:22:55
 
 Integrando JPA com aplicação WEB
 00:11:22

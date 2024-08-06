@@ -11,7 +11,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .linkBox {
     display: flex;
     justify-content: space-around;
-    
 }
 
 .linkAnc {
@@ -34,4 +33,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     display: flex;
     flex-direction: row;
     gap: 5px;
+}
+
+/*CSS in pointofsaleinsert.xhtml*/
+.linkPs {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none !important;
+}
+
+.linkPs a {
+    list-style: none;
 }
