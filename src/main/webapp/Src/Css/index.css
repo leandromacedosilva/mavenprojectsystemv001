@@ -34,14 +34,3 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     flex-direction: row;
     gap: 5px;
 }
-
-/*CSS in pointofsaleinsert.xhtml*/
-.linkPs {
-    display: flex;
-    justify-content: flex-end;
-    text-decoration: none !important;
-}
-
-.linkPs a {
-    list-style: none;
-}

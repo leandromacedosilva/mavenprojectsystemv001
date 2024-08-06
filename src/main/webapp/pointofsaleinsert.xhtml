@@ -6,7 +6,7 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>system prototype - cadastrar pos</title>
-        <link href="./Src/Css/index.css" rel="stylesheet" />
+        <link href="./Src/Css/pointofsaleinsert.css" rel="stylesheet" />
     </h:head>
     <h:body>
         <h1>WELCOME TO SYSTEM PROTOTYPE</h1>
@@ -16,7 +16,7 @@
                 <div class="linkPs">
                 <a href="pointofsalessearch.xhtml" target="_blank">consultar pos</a>
                 </div>
-                <h:panelGrid columns="1">
+                <h:panelGrid columns="1" class="panelGridBox">
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.operator}" placeholder="operador" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.fisicalBox}" placeholder="caixa fisico" style="width: 100px" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.logicalBox}" placeholder="caixa logico" style="width: 100px" />
