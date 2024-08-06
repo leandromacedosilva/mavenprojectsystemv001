@@ -1,9 +1,10 @@
 
-package com.mycompany.mavenprojectsystemv001.model;
+package com.mycompany.mavenprojectsystemv001.manager;
 
 import com.mycompany.mavenprojectsystemv001.util.Message;
-import com.mycompany.projectprototypesystemv01.model.PointOfSale;
-import com.mycompany.projectprototypesystemv01.service.PointOfSaleService;
+import com.mycompany.mavenprojectsystemv001.model.PointOfSale;
+import com.mycompany.mavenprojectsystemv001.service.PointOfSaleService;
+//import com.mycompany.projectprototypesystemv01.service.PointOfSaleService;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.faces.context.FacesContext;
@@ -37,9 +38,9 @@ public class PointOfSaleManager implements Serializable {
         String visible = params.get("visible");
         String edit = params.get("edit");
         if(visible != null) {
-            pointOfSale = pointOfSaleService.find(Long.parseLong(visible));
+            pointOfSale = (PointOfSale) pointOfSaleService.find(Long.parseLong(visible));
         } else if(edit != null){
-            pointOfSale = pointOfSaleService.find(Long.parseLong(edit));
+            pointOfSale = (PointOfSale) pointOfSaleService.find(Long.parseLong(edit));
         } else{
         pointOfSale = new PointOfSale();
         pointOfSales = new ArrayList<>();
@@ -58,7 +59,7 @@ public class PointOfSaleManager implements Serializable {
     }
     
     public void findAll() {
-        pointOfSales = pointOfSaleService.findAlll();
+        pointOfSales =  pointOfSaleService.findAlll();
     }
     
     public void search() {

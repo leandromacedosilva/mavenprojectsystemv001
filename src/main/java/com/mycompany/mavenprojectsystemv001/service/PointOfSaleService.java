@@ -1,8 +1,8 @@
 
-package com.mycompany.projectprototypesystemv01.service;
+package com.mycompany.mavenprojectsystemv001.service;
 
 import com.mycompany.projectprototypesystemv01.generic.GenericService;
-import com.mycompany.projectprototypesystemv01.model.PointOfSale;
+import com.mycompany.mavenprojectsystemv001.model.PointOfSale;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.Query;
 import java.util.List;

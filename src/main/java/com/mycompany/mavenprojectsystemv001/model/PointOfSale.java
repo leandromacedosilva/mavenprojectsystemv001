@@ -1,6 +1,7 @@
 
-package com.mycompany.projectprototypesystemv01.model;
+package com.mycompany.mavenprojectsystemv001.model;
 
+import com.mycompany.mavenprojectsystemv001.util.Caracter;
 import com.mycompany.projectprototypesystemv01.generic.GenericEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,6 +28,7 @@ public class PointOfSale extends GenericEntity {
     private int fisicalBox;
     private int logicalBox;
     private float posValue;
+    private String vlText;
     @Column(length = 50)
     private String cardType;
     //  classe generica dataregistro;
@@ -43,6 +45,12 @@ public class PointOfSale extends GenericEntity {
         this.posValue = posValue;
         this.cardType = cardType;
         this.note = note;
+    }
+    
+    // converter virgula para ponto 
+    public void convertCaracter() {
+        vlText = String.valueOf(this.posValue);
+        Caracter.caracterRemove(vlText);
     }
 
     public Long getId() {
@@ -84,6 +92,16 @@ public class PointOfSale extends GenericEntity {
     public void setPosValue(float posValue) {
         this.posValue = posValue;
     }
+
+    public String getVlText() {
+        return vlText;
+    }
+
+    public void setVlText(String vlText) {
+        this.vlText = vlText;
+    }
+    
+    
 
     public String getCardType() {
         return cardType;
