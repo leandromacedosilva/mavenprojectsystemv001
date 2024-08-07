@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>system prototype - edit registro pos</title>
-        <link href="./Src/Css/pointofsalessearchedit.css" rel="stylesheet" />
+        <title>system prototype - pesquisar registros pos</title>
+        <link href="../../Css/pointofsalessearch.css" rel="stylesheet" />
     </h:head>
     <h:body style="background-color: #dcfce7">
         <h1>WELCOME TO SYSTEM PROTOTYPE</h1>
@@ -15,9 +15,7 @@
             <p:panel header="panel point of sale search" toggleable="true" toggleSpeed="500" closable="true" closeSpeed="500" widgetVar="panel">
                 <div class="linkPs">
                     <a href="pointofsaleinsert.xhtml" target="_blank">retornar para cadastrar pos</a>
-                    <a href="pointofsalessearch.xhtml" target="_blank">consultar pos</a>
                 </div>
-                
                 <h:panelGrid columns="9" class="panelGridBox">
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.id}" placeholder="codigo do pos" style="width: 120px" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.operator}" placeholder="operador" />
@@ -25,28 +23,37 @@
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.logicalBox}" placeholder="posicao logica" style="width: 50px" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.posValue}" placeholder="valor" style="width: 100px" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.cardType}" placeholder="tipo cartao" />
-                    <p:inputText value="#{pointOfSaleManager.pointOfSale.note}" placeholder="observacao" style="width: 420px" />
+                    <p:inputText value="#{pointOfSaleManager.pointOfSale.note}" placeholder="observacao" style="width: 400px" />
                     <p:commandButton value="Search" actionListener="#{pointOfSaleManager.search()}" icon="pi pi-search" update="@form" />
                 </h:panelGrid>
                 <p:dataTable id="dt" value="#{pointOfSaleManager.pointOfSales}" var="pointOfSale" paginator="true" rows="5">
                     
-                        <p:column headerText="codigo">
+                    <p:column headerText="codigo" style="width: 40px" >
                             <p:outputLabel value="#{pointOfSale.id}" />
                         </p:column>
-                        <p:column headerText="operador">
+                        <p:column headerText="operador" style="width: 70px" >
                             <p:outputLabel value="#{pointOfSale.operator}" />
                         </p:column>
-                        <p:column headerText="posicao fisica">
+                        <p:column headerText="posicao fisica" style="width: 40px">
                             <p:outputLabel value="#{pointOfSale.fisicalBox}" />
                         </p:column>
-                        <p:column headerText="posicao logica">
+                        <p:column headerText="posicao logica" style="width: 40px">
                             <p:outputLabel value="#{pointOfSale.logicalBox}" />
                         </p:column>
                         <p:column headerText="valor">
                             <p:outputLabel value="#{pointOfSale.posValue}" />
                         </p:column>
-                        <p:column headerText="data">
+                        <!--<p:column headerText="data registro">
                             <p:outputLabel value="#{pointOfSale.dateRegister}" />
+                            <h:outputText value="#{pointOfSale.dateRegister}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputText>
+                        </p:column>-->
+                        <!--Tratando data em JSF/Prime Faces com Java Lang-->
+                        <p:column headerText="data registro" sortBy="#{pointOfSale.dateRegister}" filterBy="#{pointOfSale.dateRegister}">
+                            <h:outputText value="#{pointOfSale.dateRegister}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputText>
                         </p:column>
                         <p:column headerText="tipo cartao">
                             <p:outputLabel value="#{pointOfSale.cardType}" />
@@ -54,10 +61,6 @@
                         <p:column headerText="observacao">
                             <p:outputLabel value="#{pointOfSale.note}" />
                         </p:column>
-                    <p:column headerText="acoes" >
-                        <p:button icon="pi pi-pencil" href="pointofsaleinsert.xhtml?edit=#{pointOfSale.id}" />
-                        <p:button icon="pi pi-trash" />
-                    </p:column>
                 </p:dataTable>
             </p:panel>
         </h:form>
