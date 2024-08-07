@@ -2,27 +2,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-       xmlns:f="http://xmlns.jcp.org/jsf/core"
-       xmlns:p="http://primefaces.org/ui">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>home page</title>
-        <link href="./Src/Css/index.css" rel="stylesheet"/>
+        <title>system prototype - index - menu</title>
+        <link rel="stylesheet" href="Assets/Src/Css/style.css" />
     </h:head>
-    <h:body>
-        
-        <h:form>
-            <p:growl id="grow" />
-            <p:panel header="panel inf" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel">
-                <hr/>
-                <div class="linkBox">
-                <a href="hardwarecomproblema.xhtml" target="_blank" class="linkAnc">hardware com problema page</a>
-                <a href="assistenciatecnica.xhtml" target="_blank" class="linkAnc">assistencia tecnica page</a>
-                </div>
-                <hr/>
-                <p:inputText value="#{managerHardware.hardwareComProblema.descricao}" required="true" requiredMessage="campo obrigatorio" />
-                <p:commandButton value="Save" actionListener="#{managerHardware.salvar()}" update="@form" />
-                <p:outputLabel value="#{managerHardware.resultado}"/>
-            </p:panel>
+    <h:body style="background-color: #d97706">
+        <h1>WELCOME TO SYSTEM PROTOTYPE</h1>
+        <h:form id="speedDialForm">
+            <p:tooltip />
+            <p:growl id="messages" showDetail="true"/>
+                <div class="card">
+        <h3>MENU</h3>
+        <div class="speeddial-linear-demo" style="position: relative; height: 500px">
+           
+            <p:speedDial direction="">
+                <p:menuitem icon="pi pi-external-link" url="pointofsaleinsert.xhtml" title="cadastrar pos" target="_blank" />
+                <p:menuitem icon="pi pi-external-link" url="pointofsalessearch.xhtml" title="pesquisar pos" target="_blank" />
+                <p:menuitem icon="pi pi-external-link" url="pointofsalessearchedit.xhtml" title="pesquisar-edit pos" target="_blank" />
+                <p:menuitem icon="pi pi-external-link" url="productinsert.xhtml" title="cadastrar produto" target="_blank" />
+                <p:menuitem icon="pi pi-external-link" url="productsearch.xhtml" title="pesquisar produto" target="_blank" />
+                <p:menuitem icon="pi pi-external-link" url="productsearchedit.xhtml" title="pesquisar-edit produto" target="_blank" />
+                <p:menuitem icon="pi pi-external-link" url="productpub.xhtml" title="entrada produto bar" target="_blank" />
+            </p:speedDial>
+        </div>
+    </div>
         </h:form>
+        
     </h:body>
 </html>
+

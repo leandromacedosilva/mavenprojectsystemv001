@@ -6,13 +6,17 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>system prototype - pesquisar registros pos</title>
+        <link href="./Src/Css/pointofsalessearch.css" rel="stylesheet" />
     </h:head>
-    <h:body>
+    <h:body style="background-color: #dcfce7">
         <h1>WELCOME TO SYSTEM PROTOTYPE</h1>
         <h:form>
             <p:growl id="growl" />
             <p:panel header="panel point of sale search" toggleable="true" toggleSpeed="500" closable="true" closeSpeed="500" widgetVar="panel">
-                <h:panelGrid columns="9">
+                <div class="linkPs">
+                    <a href="pointofsaleinsert.xhtml" target="_blank">retornar para cadastrar pos</a>
+                </div>
+                <h:panelGrid columns="9" class="panelGridBox">
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.id}" placeholder="codigo do pos" style="width: 120px" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.operator}" placeholder="operador" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.fisicalBox}" placeholder="posicao fisica" style="width: 50px" />
