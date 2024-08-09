@@ -1,11 +1,12 @@
 
-package com.mycompany.projectprototypesystemv01.manager;
+package com.mycompany.mavenprojectsystemv001.manager;
 
 import com.mycompany.mavenprojectsystemv001.util.Message;
 import com.mycompany.projectprototypesystemv01.model.Product;
 import com.mycompany.projectprototypesystemv01.service.ProductService;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
+//import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
@@ -20,6 +21,7 @@ import java.util.Map;
  */
 @Named
 @ViewScoped
+//@RequestScoped
 public class ProductManager implements Serializable {
     
     @EJB
@@ -63,6 +65,10 @@ public class ProductManager implements Serializable {
     public void search() {
         //products = productService.findAlll();
         products = productService.findByAll(product);
+    }
+    
+    public void searchBarcode() {
+        
     }
     
     // metodo que traz lista de clientes

@@ -17,7 +17,10 @@
                 <a href="pointofsalessearch.xhtml" target="_blank">consultar pos</a>
                 </div>
                 <h:panelGrid columns="1" class="panelGridBox">
-                    <p:inputText value="#{pointOfSaleManager.pointOfSale.operator}" placeholder="operador" />
+                    <span class="ui-float-label">
+                        <p:inputText id="float-input" value="#{pointOfSaleManager.pointOfSale.operator}" placeholder="" />
+                        <p:outputLabel for="@previous" value="Operador" />
+                    </span>
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.fisicalBox}" placeholder="caixa fisico" style="width: 100px" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.logicalBox}" placeholder="caixa logico" style="width: 100px" />
                     <p:inputText value="#{pointOfSaleManager.pointOfSale.posValue}" placeholder="valor do cartao" style="width: 130px" />

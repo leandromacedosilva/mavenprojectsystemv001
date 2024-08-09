@@ -101,6 +101,5 @@ public class PointOfSaleManager implements Serializable {
     public void setPointOfSales(List<PointOfSale> pointOfSales) {
         this.pointOfSales = pointOfSales;
     }
-    
-    
+     
 }

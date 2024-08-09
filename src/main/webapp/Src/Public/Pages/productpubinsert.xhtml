@@ -18,15 +18,9 @@
                     <p:inputText value="#{productManager.product.barcode}" placeholder="codigo de barras" />
                     <p:inputText value="#{productManager.product.description}" placeholder="pesquisar pela descricao" />
                     <p:inputText value="#{productManager.product.packaging}" placeholder="embalagem" />
-                    <p:commandButton value="Search" actionListener="#{productManager.search()}" icon="pi pi-search" update="@form" />
+                    <p:commandButton value="Add" actionListener="#{productManager.search()}" icon="pi pi-plus" update="@form" />
                 </h:panelGrid>
                 <hr/>
-                <h:panelGrid columns="1">
-                    <p:inputText value="" placeholder="codigo winthor" />
-                    <p:inputText value="#{productManager.product.barcode}" placeholder="codigo de barras" />
-                    <p:inputText value="" placeholder="descricao" />
-                    <p:commandButton value="Add" actionListener="#{productManager.searchBarcode()}" update="@form" icon="pi pi-plus" />
-                </h:panelGrid>
                 <p:dataTable id="dt" value="#{productManager.products}" var="product">
                     <h:panelGrid columns="1" >
                         <p:column headerText="codigo">
